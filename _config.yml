@@ -1,4 +1,5 @@
 # GitHub Pages / Jekyll settings
+theme: jekyll-theme-slate
 title: Expense Tracker
 description: Track your expenses
 
