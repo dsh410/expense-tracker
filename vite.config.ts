@@ -15,7 +15,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // User site is https://dsh410.github.io (the domain root), so assets
-  // must be /assets/... A /expense-tracker/ prefix would 404 here.
-  base: '/',
 })
