@@ -16,8 +16,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    /* Path aliases */
-    "baseUrl": ".",
+    /* Path aliases — resolved relative to this file. Vite has a matching
+       alias in vite.config.ts so both the type-checker and the bundler agree. */
     "paths": {
       "@/*": ["./src/*"]
     },
