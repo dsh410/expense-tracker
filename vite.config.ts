@@ -15,5 +15,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  base: '/dsh410.github.io/',
+  // Project Pages URL is https://dsh410.github.io/expense-tracker/
+  // so asset paths must start with /expense-tracker/ (not the domain name).
+  base: '/expense-tracker/',
 })
