@@ -1,6 +1,6 @@
 # Expense Tracker
 
-**Live:** https://dsh410.github.io · **Stack:** React · TypeScript · RTK Query · Supabase
+**Stack:** React · TypeScript · RTK Query · Supabase
 
 A personal finance tracker built to work with real data at real volume: CSV import,
 a sortable and filterable transaction table over 10k+ rows, category budgeting, and
@@ -52,44 +52,6 @@ key secrecy.
 
 ---
 
-## Deployment
-
-Hosted on GitHub Pages, deployed from `main` via GitHub Actions. Static hosting is
-sufficient because Supabase handles auth and data directly from the client.
-
-Static hosting does impose three constraints worth documenting, since none of them
-are obvious and all three break silently:
-
-**SPA routing.** Pages is a plain file server with no rewrite rules, so a direct
-visit to `/transactions?category=food` would 404 — there's no file at that path.
-The build copies `index.html` to `404.html`; Pages serves it for unknown paths while
-preserving the URL, and React Router takes over from there. This preserves real
-paths rather than falling back to `HashRouter`, which matters because shareable,
-back-button-correct URLs are a deliberate part of this app's state model.
-
-```json
-"build": "tsc -b && vite build && cp dist/index.html dist/404.html"
-```
-
-**Base path.** Served from the domain root, so `base` stays `/`.
-<!--
-  If you move this to a project repo (dsh410.github.io/expense-tracker/), set
-  base: '/expense-tracker/' in vite.config.ts and pass
-  basename={import.meta.env.BASE_URL} to BrowserRouter. Assets 404 in production
-  otherwise, while dev keeps working — an easy hour to lose.
--->
-
-
-**Environment variables.** No runtime injection on static hosting, so Supabase
-credentials are baked in at build time from GitHub Actions secrets
-(`VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`). The workflow runs lint and tests
-before building, so a failing test blocks the deploy.
-
-The Pages origin is registered in Supabase's allowed redirect URLs, without which
-email confirmation and password reset links redirect to localhost.
-
----
-
 ## Stack, and why
 
 | Concern | Choice | Reasoning |
@@ -103,7 +65,7 @@ email confirmation and password reset links redirect to localhost.
 | Table | TanStack Table + Virtual | <!-- TODO --> |
 | Testing | Vitest + RTL + MSW | <!-- TODO --> |
 | E2E | Playwright | <!-- TODO --> |
-| Hosting | GitHub Pages + Actions | <!-- TODO: static hosting is enough because Supabase is the backend --> |
+| Hosting | <!-- TODO --> | <!-- TODO --> |
 
 ---
 
