@@ -1,0 +1,8 @@
+# GitHub Pages / Jekyll settings
+title: Expense Tracker
+description: Track your expenses
+
+# Jekyll ignores paths that start with "_" by default.
+# This keeps those files available if you deploy the built app here.
+include:
+  - '_*'
