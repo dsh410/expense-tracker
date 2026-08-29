@@ -1,6 +1,6 @@
 # Expense Tracker
 
-**Live:** https://dsh410.github.io/expense-tracker/ · **Stack:** React · TypeScript · RTK Query · Supabase
+**Live:** https://dsh410.github.io · **Stack:** React · TypeScript · RTK Query · Supabase
 
 A personal finance tracker built to work with real data at real volume: CSV import,
 a sortable and filterable transaction table over 10k+ rows, category budgeting, and
@@ -71,10 +71,13 @@ back-button-correct URLs are a deliberate part of this app's state model.
 "build": "tsc -b && vite build && cp dist/index.html dist/404.html"
 ```
 
-**Base path.** This is a project site, so `base` is `/expense-tracker/` in
-`vite.config.ts`. When you add React Router, pass
-`basename={import.meta.env.BASE_URL}` or production assets and routes 404
-while `npm run dev` still looks fine.
+**Base path.** Served from the domain root, so `base` stays `/`.
+<!--
+  If you move this to a project repo (dsh410.github.io/expense-tracker/), set
+  base: '/expense-tracker/' in vite.config.ts and pass
+  basename={import.meta.env.BASE_URL} to BrowserRouter. Assets 404 in production
+  otherwise, while dev keeps working — an easy hour to lose.
+-->
 
 
 **Environment variables.** No runtime injection on static hosting, so Supabase

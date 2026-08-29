@@ -15,8 +15,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // Project Pages URL is https://dsh410.github.io/expense-tracker/
-  // so every asset must start with /expense-tracker/ (not / and not the
-  // old repo name). Dev still works; visit /expense-tracker/ on localhost.
-  base: '/expense-tracker/',
+  // User site is https://dsh410.github.io (the domain root), so assets
+  // must be /assets/... A /expense-tracker/ prefix would 404 here.
+  base: '/',
 })
